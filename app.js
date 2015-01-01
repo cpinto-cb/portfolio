@@ -141,11 +141,12 @@ Ext.onReady(function(){
                     return 'warn-col';
                 },
                 getTip: function(v, meta, rec) {
+
                     var state = rec.get('status');
                     if ( state == 'running') return 'Stop Server';
                     if ( state == 'stopped') return 'Start Server';
-                    console.log('Server is '+state);
                     return 'Server is '+state;
+
                 },
                 handler: function(grid, rowIndex, colIndex) {
                     var rec = grid.getStore().getAt(rowIndex),
