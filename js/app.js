@@ -70,9 +70,9 @@ Ext.onReady(function(){
     });
 
     var grid = Ext.create('Ext.grid.Panel', {
-        width: 700,
+        width: 800,
         height: 500,
-        title: 'ExtJS.com - Browse Forums',
+        title: 'Code Example by Chris Pinto -- Manage AWS Servers',
         store: store,
         loadMask: true,
 
@@ -127,10 +127,11 @@ Ext.onReady(function(){
                 sortable: true,
                 groupable: false
             },{
+            text: 'Click to Start/Stop',
             menuDisabled: true,
             sortable: false,
             xtype: 'actioncolumn',
-            width: 50,
+            width: 450,
             items: [
                 {
                 getClass: function(v, meta, rec) {
