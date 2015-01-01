@@ -1,0 +1,9 @@
+
+curl -sS https://getcomposer.org/installer | php
+
+php composer.phar install
+
+php vendor/bin/doctrine orm:info
+
+update servers set az = 'Sao Paulo' where az = 'São Paulo';
+
