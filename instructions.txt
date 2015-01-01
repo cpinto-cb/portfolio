@@ -1,9 +1,81 @@
+# git clone git@github.com:cpinto-cb/portfolio.git
+
+This application uses the Doctrine PHP ORM
+There are a few ways to install doctrine, but one of the easiest ways to install is by using composer.
+
+Download composer via curl on the command line.
 
 curl -sS https://getcomposer.org/installer | php
 
+If the above command runs successfully you should see output like the following:
+
+    All settings correct for using Composer
+    Downloading...
+
+    Composer successfully installed to: /Users/Chris/git/portfolio/composer.phar
+    Use it: php composer.phar
+
+
+Run composer to install doctrine (note composer reads that composer.json file that is already setup for installing Doctrine)
+
 php composer.phar install
+
+If the composer install command runs properly the output should look like the following:
+
+    Loading composer repositories with package information
+    Installing dependencies (including require-dev)
+      - Installing symfony/console (v2.6.1)
+        Loading from cache
+
+      - Installing doctrine/lexer (v1.0)
+        Loading from cache
+
+      - Installing doctrine/annotations (v1.2.3)
+        Loading from cache
+
+      - Installing doctrine/collections (v1.2)
+        Loading from cache
+
+      - Installing doctrine/cache (v1.3.1)
+        Loading from cache
+
+      - Installing doctrine/inflector (v1.0.1)
+        Loading from cache
+
+      - Installing doctrine/common (v2.4.2)
+        Loading from cache
+
+      - Installing doctrine/dbal (v2.5.0)
+        Loading from cache
+
+      - Installing doctrine/orm (v2.4.7)
+        Loading from cache
+
+    symfony/console suggests installing symfony/event-dispatcher ()
+    symfony/console suggests installing symfony/process ()
+    symfony/console suggests installing psr/log (For using the console logger)
+    doctrine/orm suggests installing symfony/yaml (If you want to use YAML Metadata Mapping Driver)
+    Writing lock file
+    Generating autoload files
+
+At this point you need to have a mySQL database running on localhost with username root and password root and a DB named runnable_doctrine created.
+If this is not your configuration, then edit the settings in bootstrap.php
+
+
+Be sure that doctrine is properly installed by running the following command:
 
 php vendor/bin/doctrine orm:info
 
-update servers set az = 'Sao Paulo' where az = 'São Paulo';
+To see what commands and options are available in doctrine tool simply run the command:
+
+php vendor/bin/doctrine
+
+To create the tables needed for this example application run the following command:
+
+php vendor/bin/doctrine orm:schema-tool:create
+
+The file MOCK_DATA.sql is provided to populate the DB with example data. Run this in your favorite mySQL tool or from the command line.
+
+mysql -u root -p root runnable_doctrine <MOCK_DATA.sql
+
 
